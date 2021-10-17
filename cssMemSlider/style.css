@@ -39,11 +39,23 @@ img{
     height: 90%;
 }
 
+.textSlider{
+    font-size: 1.5rem;
+    color: white;
+    display: none;
+}
+
 @keyframes imgOpen {
     0%   { transform: translate(-100%, 0);}
     50%   { transform: translate(-50%, 0);}
     100%  { transform: translate(0, 0);}
       }
+
+@keyframes textOpen {
+    0%   { transform: translate(-100%, 0);}
+    50%   { transform: translate(-50%, 0);}
+    100%  { transform: translate(0, 0);}
+      }      
 
 #number1:checked + .sliderImg,
 #number2:checked + .sliderImg,
@@ -99,5 +111,15 @@ img{
 #number4:checked ~ .container-bottom .contols .label4,
 #number5:checked ~ .container-bottom .contols .label5{
     background-color:darkslateblue
-    
+}
+
+#number1:checked ~ .container-bottom .text .text1,
+#number2:checked ~ .container-bottom .text .text2,
+#number3:checked ~ .container-bottom .text .text3,
+#number4:checked ~ .container-bottom .text .text4,
+#number5:checked ~ .container-bottom .text .text5{
+    animation-name: textOpen;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    display: block;
 }
